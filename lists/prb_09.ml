@@ -2,7 +2,7 @@
 let pack l =
   let rec pc_aux d_l pcg p_l =
     match d_l with
-    | [] -> p_l
+    | [] -> pcg::p_l
     | x :: t ->
        if pcg = [] || x = (List.hd pcg) then
 	 pc_aux t (x::pcg) p_l
