@@ -9,11 +9,11 @@
  *)
 
 let rand_select l n =
-  let rec rs l n_l n =
+  let rec rs n_l n =
     if n = 0 then
       n_l
     else
       let rn = Random.int (List.length l) in
-      
+      rs ((List.nth l rn)::n_l) (n-1)
   in
-  rs l [] n
+  rs [] n

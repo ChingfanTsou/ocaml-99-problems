@@ -1,0 +1,58 @@
+OASISFormat: 0.4
+Name:        OCaml_99_Problems
+Version:     0.1
+Synopsis:    Solutions to the ocaml 99 problems
+Authors:     Chingfan Tsao
+License:     MIT
+
+Flag test_all
+  Description:        Run test suite if given
+  Default$:           true
+
+Library list_prb
+  Path:               solutions/list
+  Modules:            Prb_01,
+                      Prb_02,
+                      Prb_03,
+                      Prb_04,
+                      Prb_05,
+                      Prb_06,
+                      Prb_07,
+                      Prb_08,
+                      Prb_09,
+                      Prb_10,
+                      Prb_11,
+                      Prb_12,
+                      Prb_13,
+                      Prb_14,
+                      Prb_15,
+                      Prb_16,
+                      Prb_17,
+                      Prb_18,
+                      Prb_19,
+                      Prb_20,
+                      Prb_21,
+                      Prb_22,
+                      Prb_23
+              
+  Build:              true
+  Pack:               true
+  CompiledObject:     best
+  Install:            false
+  BuildTools:         ocamlbuild
+
+
+Executable run_list_test
+  Path:               unit_test
+  MainIs:             list_test.ml
+  Build$:             true#flag(test_all)
+  BuildTools:         ocamlbuild
+  Custom:             true
+  CompiledObject:     best
+  Install:            false
+  BuildDepends:       list_prb, oUnit (>= 2.0.0)
+
+Test list_test_runner
+  Run$:               flag(test_all)
+  Command:            $run_list_test
+  WorkingDirectory:   unit_test

@@ -15,7 +15,3 @@ let insert_at new_ele pos l =
        else 
 	 ins (p+1) t (x::n_l) in
   List.rev (ins 0 l [])
-
-assert (insert_at "alfa" 1 ["a";"b";"c";"d"] = ["a"; "alfa"; "b"; "c"; "d"])
-assert (insert_at "alfa" 3 ["a";"b";"c";"d"] = ["a"; "b"; "c"; "alfa"; "d"])
-assert (insert_at "alfa" 4 ["a";"b";"c";"d"] = ["a"; "b"; "c"; "d"; "alfa"])

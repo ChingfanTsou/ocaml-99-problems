@@ -26,7 +26,7 @@ let encode_m l =
     match d_l with
     | [] -> (mdf pcg)::c_l
     | x :: t ->
-       let Many (n,y) = pcg in
+       let Many(n,y) = pcg in
        if n = 0 || x = y then
 	 ec_aux t (Many(n+1,y)) c_l
        else

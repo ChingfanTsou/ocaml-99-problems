@@ -11,4 +11,3 @@ let remove_at n l =
 	 rm (i+1) t (x::a_l) in
   rm 0 l []
 
-assert (remove_at 1 ["a";"b";"c";"d"] = ["a"; "c"; "d"])
