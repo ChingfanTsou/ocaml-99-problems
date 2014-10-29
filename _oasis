@@ -5,9 +5,9 @@ Synopsis:    Solutions to the ocaml 99 problems
 Authors:     Chingfan Tsao
 License:     MIT
 
-Flag test_all
+Flag testall
   Description:        Run test suite if given
-  Default$:           true
+  Default :           false
 
 Library list_prb
   Path:               solutions/list
@@ -45,7 +45,7 @@ Library list_prb
 Executable run_list_test
   Path:               unit_test
   MainIs:             list_test.ml
-  Build$:             true#flag(test_all)
+  Build$:             flag(testall)
   BuildTools:         ocamlbuild
   Custom:             true
   CompiledObject:     best
@@ -53,6 +53,6 @@ Executable run_list_test
   BuildDepends:       list_prb, oUnit (>= 2.0.0)
 
 Test list_test_runner
-  Run$:               flag(test_all)
+  Run$:               flag(testall)
   Command:            $run_list_test
   WorkingDirectory:   unit_test
