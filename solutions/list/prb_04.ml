@@ -5,3 +5,11 @@ let length l =
     | [] -> n
     | x :: t -> len t (n+1) in
   len l 0
+
+TEST "04_nom" =
+  length [ "a" ; "b" ; "c"] =
+  3
+
+TEST "04_null" =
+  length [] =
+  0

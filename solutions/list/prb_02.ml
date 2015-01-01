@@ -5,3 +5,15 @@ let rec last_two l =
   | x :: [] -> None
   | x :: y ::[] -> Some (x, y)
   | x :: t -> last_two t
+
+TEST "02_nom" =
+  last_two [ "a" ; "b" ; "c" ; "d" ] =
+  Some ("c", "d")
+
+TEST "02_one" =
+  (last_two [ "a" ]) =
+  None
+
+TEST "02_null" =
+  (last_two []) =
+   None

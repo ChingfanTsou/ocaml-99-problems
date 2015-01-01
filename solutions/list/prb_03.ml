@@ -7,3 +7,11 @@ let rec at n l =
      else
        at (n-1) t
   | [] -> None
+
+TEST "03_nom" =
+  at 3 [ "a" ; "b"; "c"; "d"; "e" ] =
+  Some "c"
+
+TEST "03_null" =
+  at 3 [ "a" ] =
+  None

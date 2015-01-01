@@ -4,3 +4,9 @@ let rec last l =
   | [] -> None
   | h :: [] -> Some h
   | h :: t -> last t
+
+TEST "01_nom" =
+  Some "d" = last [ "a" ; "b" ; "c" ; "d" ]
+               
+TEST "01_null" =
+  None = last []

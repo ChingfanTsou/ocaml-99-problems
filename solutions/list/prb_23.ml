@@ -9,11 +9,20 @@
  *)
 
 let rand_select l n =
-  let rec rs n_l n =
+  let rec rs n_l n rl =
     if n = 0 then
       n_l
     else
-      let rn = Random.int (List.length l) in
-      rs ((List.nth l rn)::n_l) (n-1)
+      let rn = Random.int (List.length rl) in
+      rs ((List.nth rl rn)::n_l) (n-1) (Prb_20.remove_at rn rl)
   in
-  rs [] n
+  rs [] n l
+
+TEST "23" =
+  let l = ["a";"b";"c";"d";"e";"f";"g";"h"] in
+  let rs_l = rand_select l 3 in
+  if List.length l <> 3 then
+    false
+  else
+    List.fold_left (fun t x -> (List.mem x l) && t) true rs_l
+

@@ -2,4 +2,4 @@ S solutions/list
 S unit_test
 B _build
 PKG oUnit
-
+EXT ounit

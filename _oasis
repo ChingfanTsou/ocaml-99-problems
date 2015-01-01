@@ -36,6 +36,8 @@ Library list_prb
                       Prb_23
               
   Build:              true
+  BuildDepends:	      pa_ounit,
+                      pa_ounit.syntax
   Pack:               true
   CompiledObject:     best
   Install:            false

@@ -11,3 +11,7 @@ let remove_at n l =
 	 rm (i+1) t (x::a_l) in
   rm 0 l []
 
+TEST "20_nom" =
+  ["a"; "c"; "d"] =
+  remove_at 1 ["a";"b";"c";"d"]
+
